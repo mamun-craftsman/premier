@@ -1,0 +1,523 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body{
+	width: 100%;
+	height: 100%;
+
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+#main {
+	width: 100%;
+	height: 100%;
+	background-color: #f8f8f8;
+	position: relative; /*to control the children*/
+	padding-top: 0.1px;
+}
+nav {
+	width: 100%;
+	height: 11vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* background-color: red; */
+	margin-top: 1em;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	
+}
+nav :not(:last-child, :first-child){
+	border-right: 2px solid black;
+}
+nav h1 {
+	display: flex;
+	justify-content: center;
+	
+	font-size: 4vw;
+	font-weight: bolder;
+	letter-spacing: -4px;
+}
+nav a, nav h4{
+	/* background-color: blue; */
+	height: 100%;
+	width: 24%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2vw;
+	font-weight: 500;
+	
+}
+nav :nth-last-child(1){
+	width: 12%;
+	padding-right: 1.5em;
+}
+
+#center {
+	height: 50vw;
+	width:100%;
+	position: relative;
+	padding:3.6vw 6vw;
+	/* background-color: red; */
+}
+#content{
+	width: 100%;
+	height: 100%;
+	/* background-color: blue; */
+	position: relative;
+}
+#content video{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+#blackishOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.381);
+	
+}
+#overlay {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 58%;
+	padding: 4.2vw;
+	color: white;
+	/* backdrop-filter: blur(0.1px);
+	background-color: rgba(0, 0, 0, 0.030); */
+
+}
+#over1{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 3vh;
+}
+#over1 h1{
+	font-size: 4vw;
+	font-weight: 500;
+	letter-spacing: -2px;
+	mix-blend-mode:difference;
+}
+#over1 h2 {
+	font-size: 1.2vw;
+	padding: 2vw 2.2vw;
+	font-weight: 100;
+	border: 2px solid white;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#over2{
+
+	display: flex;
+	padding-top: 1vh;
+	height: 50%;
+	align-items: center;
+	justify-content: space-between;
+	border-top: 1px solid white;
+
+}
+#over2 h4 i{
+	font-size: 2.5vw;
+	font-weight: 100;
+}
+#scroll {
+	background-color: transparent;
+	width: 100%;
+	padding: 2vh 0;
+	/* background-color: red; */
+
+	white-space: nowrap;
+	overflow:hidden;
+}
+#scroll .container {
+	display: inline-block;
+	
+	/* background-color: blue; */
+	
+	width: 100%;
+	height: 12vw;
+	animation-name: imageInfinite;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;	
+}
+#scroll .container img {
+	/* display: none; */
+	height: 100%;
+	width: 12vw;
+	object-fit: cover;
+	object-position: 30% 0;
+	border-radius: 50%;
+	margin: 0.1vh 3vh;
+	
+}
+@keyframes imageInfinite {
+	from {
+		transform: translateX(0);
+	}
+	to{
+		transform: translateX(calc(-100% - 5px));
+	}
+}
+
+#alphabet {
+	height: 10vh;
+	width: 100%;
+	display: flex;
+	gap: 1vw;
+	justify-content: center;
+	align-items: center;
+	/* background-color: red; */
+	padding:3vw 2vw;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+
+#alphabet h6 {
+	font-size: 1.3vw;
+	font-weight: 400;
+	font-style: italic;
+	/* background-color: yellow; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 4vw;
+	padding: 0.8vw;
+	height: 2.6vw;
+	
+}
+#alphabet h6:hover{
+	width: calc(4vw - 1px);
+	border: 1px solid black; 
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+#lay {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5vw;
+	gap: 5vw;
+}
+.left {
+	width: 50%;
+	height: 100%;
+	background-image: url('https://img.freepik.com/premium-photo/pretty-blond-woman-walking-pebble-beach-enjoying-sunny-windy-day-near-blue-sea-travel-concept-pastel-muted-color-barefoot_1048944-18466544.jpg?w=740');
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: cover;
+}
+.right{
+	width: 46%;
+	height: 100%;
+}
+.right>img {
+	width: 100%;
+	height: 70%;
+	object-fit: cover;
+	object-position: top;
+}
+.right>.text {
+	width: 100%;
+	padding: 1vw 0.6vw;
+	display: flex;
+	justify-content: center;
+	gap: 3vw;
+}
+.right .leftText {
+	font-size: 1.5vw;
+	line-height: 1.3;
+	font-weight: 600;
+	width: 50%;
+}
+.right .rightText {
+	width: calc(60% - .5vw);
+	font-size: 1.3vw;
+	font-weight: 300;
+}
+#sec1 {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5vw;
+	padding: 2vw 5vw;
+}
+#sec1 .lefti {
+	width: 35%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.7vw;
+	font-weight: 400;
+}
+
+#sec1 .box>img {
+	width: 25vw;
+	height: 25vw;
+	object-fit: cover;
+	position: relative;
+}
+#sec1 .lefti>.box {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	position: relative;
+	
+}
+#sec1 .lefti>.box>p {
+	position: absolute;
+	font-size: 10vw;
+	top: 23%;
+	left: 23%;
+	font-weight: 300;
+	color: rgba(71, 71, 71, 0.909);
+	
+}
+
+#sec1 .righti {
+	width: 60%;
+	height: 100%;
+	background-image: url('https://img.freepik.com/premium-photo/woman-dress-is-walking-beach_78492-16901.jpg?w=360');
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: cover;
+}
+#singlePhoto{
+	width: 100%;
+	height: 100%;
+	padding: 2vw 5vw;
+}
+#singlePhoto>img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: bottom;
+}
+#update{
+	width: 100%;
+	height: 100%;
+	/* background-color: red; */
+	padding: 2vw 5vw;
+}
+#update>.up-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	letter-spacing: 1vw;
+	padding-bottom: 5vw;
+	border-bottom: 2px solid black;
+}
+.box1,.box2,.box3,.box4 {
+	border-bottom: 2px solid black;
+	width: 100%;
+	height: 18%;
+	display: flex;
+	justify-content: flex-start;
+	gap: 10vw;
+	padding: 0.6vw;
+}
+.bx-left {
+	width:30%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;	
+}
+.bx-right{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding-left: 12vw;
+}
+.box3>.bx-left{
+	display: flex;
+	align-items: center;
+}
+#update img {
+	width: 90px;
+	height: 100%;
+	border: 1px solid black;
+	object-fit: cover;
+	object-position: top;
+	border-radius: 50%;
+}
+.mrqCon {
+	padding: 0.5vw 1.2vw;
+	width: 100%;
+	height: 20%;
+	white-space: nowrap;
+	overflow:hidden;
+	margin-bottom: 1vw;
+}
+.mrqCon h2{
+	width: 100%;
+	/* background-color: red; */
+	display: inline-block;
+	font-size: 5vw;
+	-webkit-text-stroke:2px rgb(68, 66, 66);
+	color: transparent;
+	animation-name: mar;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;	
+	
+}
+@keyframes mar {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc(-100% - 8px));
+	}
+}
+
+  #model {
+	display: grid;
+	height: 100%;
+	width: 100%;
+	padding: 0.6vw 5vw;
+	grid-auto-rows: 24%;
+	grid-template-areas: 
+    "a a a b"
+    "a a a b"
+    "c c c b"
+    "d d d b"; 
+	gap:0.2vw;
+}
+.img1 {
+	grid-area: a;
+}
+.img2 {
+	grid-area: b;
+}
+.img3 {
+	grid-area: c;
+}
+.img4 {
+	grid-area: d;
+}
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 50% 25%;
+  }
+
+  
+.footer-container {
+	margin: 2vw 0vw;
+	min-height: 20%;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	width: 100%;
+	padding: 0vw 5vw;
+	gap: 3vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	line-height: 2;
+}
+.footer-container>* {
+	padding: 2vw 1.2vw;
+}
+
+.copy{
+	width: 100%;
+	height: 5%;
+	padding: 2vw 5vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@media (max-width:680px){
+	nav :not(:first-child) {
+		display: none;
+	}
+	nav>h1 {
+		font-size: 7vw;
+	}
+	#center {
+		height: 50vw;
+		width:100%;
+		position: relative;
+		padding:3.6vw 6vw;
+		/* background-color: red; */
+	}
+	#over1 {
+		padding-bottom: 2vw;
+	}
+	#over1 h1 {
+		font-size: 4vw;
+		letter-spacing: 0.5vw;
+	}
+	#over1 h2 {
+		font-size: 3vw;
+	}
+	#over2 {
+		
+		height: 5vw;
+	}
+	#overlay {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 0.5vw 2.2vw;
+	}
+	.footer-container {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.footer-container>*{
+		border-right: none;
+	}
+	#scroll .container img {
+		/* display: none; */
+		height: 20vw;
+		width: 20vw;	
+	}
+	#alphabet {
+		height: 8vw;
+		gap: 0.8vw;
+		padding: 0.4vw 1vw;
+	}
+	.img2{
+		min-width: 20vw;
+	}
+	#lay {
+		width: 100%;
+		height: 50%;
+		padding: 3vw;
+		gap: 3vw;
+	}
+	#sec1 {
+		height: 50%;
+	}
+	#singlePhoto {
+		width: 100%;
+		height: 60%;
+		padding: 1vw 5vw;
+	}
+	#update {
+		height: 70%;
+	}
+}
+  
